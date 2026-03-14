@@ -1,0 +1,16 @@
+## Day 02 - Understand how Linux works under the hood
+
+### Core components of Linux (kernel, user space, init/systemd) ?
+`Kernel` - kernel is the heart of the Operating System. It helps users or applications to communicate to Operating System using Shell commands. Kernel is written in some programming language so it understands things in binary form i.e. 0s and 1s which for a human was not easy to learn. So, human or user communicate to kernel using shell commands and then kernel perform tasks to OS. 
+
+`User Space` - It is the place where applications or users exist. this is the top most layer of OS architecture. 
+
+``init\systemd``- Its the first command that runs on our Operating System after boot and so its PID is 1. 
+
+### How processes are created and managed ?
+
+### What systemd does and why it matters ?
+
+### Explain **process states** (running, sleeping, zombie, etc.) ?
+
+### List **5 commands** you would use daily (`ps`, `top`, `systemctl`)
