@@ -72,13 +72,40 @@
 1. Create `check_number.sh` that:
    - Takes a number using `read`
    - Prints whether it is **positive**, **negative**, or **zero**
+- Answer:
+    ```bash 
+    #!/bin/bash
+
+    # Check Number entered by user is Positive, Negative or zero. 
+
+    read -p "Enter Number :" Number         #taking input from user
+    if [ $Number -gt 0 ];then
+        echo "Number is Positive"
+    elif [ $Number -lt 0 ]; then
+        echo "Number is Negative"
+    else
+        echo "Number is Zero"
+    fi
+    ```
 
 2. Create `file_check.sh` that:
    - Asks for a filename
    - Checks if the file **exists** using `-f`
    - Prints appropriate message
 - Answer:
+    ```bash 
+    #!/bin/bash 
 
+    # check if given input file exists or not.
+
+    read -p "Enter the filename: " fileName
+
+    if [ -f $fileName ]; then 
+        echo "File exists"
+    else 
+        echo "File doesn't exist"
+    fi
+    ```
 
 ---
 
@@ -89,6 +116,43 @@ Create `server_check.sh` that:
 3. If `y` — runs `systemctl status <service>` and prints whether it's **active** or **not**
 4. If `n` — prints "Skipped."
 - Answer:
+```bash
+#!/bin/bash
 
+#stores a service name as a variable and ask user if they want to check the status of that service 
 
+service_name="nginx"
+read -p "Do you want to check the status of $service_name? (y/n): " status
+
+if [[ "$status" == "y" ]]; then
+    echo "Checking status of $service_name..."
+
+    # macOS (brew services)
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        if command -v brew >/dev/null 2>&1; then
+            brew services list | grep "$service_name"
+        else
+            echo "Homebrew not installed"
+        fi
+
+    # Linux with systemd
+    elif command -v systemctl >/dev/null 2>&1; then
+        systemctl status "$service_name"
+    else
+        echo "No supported service manager found"
+    fi
+
+else
+    echo "Skipped."
+fi
+```
 ---
+
+## What I learned -
+
+* How to write and execute Bash shell scripts using the shebang (`#!/bin/bash`),variables,and user input with `read`.
+* How variable assignment works in Bash,including accessing variables with `$` and understanding single vs double quotes.
+* How to control script flow using conditional statements (`if`, `elif`, `else`) and test operators (`-f`, `-gt`, `-lt`).
+* How to check file existence and numeric conditions inside shell scripts.
+* How to suppress command output using redirection (`> /dev/null `).
+* How to use `systemctl is-active` to programmatically check whether a service is running instead of relying on verbose status output.
