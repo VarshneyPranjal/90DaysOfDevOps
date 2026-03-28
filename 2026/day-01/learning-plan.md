@@ -10,4 +10,4 @@ As I am a Golang Developer since 2+ years but I did not find much opportunities 
 For now I just want to switch and grab better package where atleast I can learn things on which i am interested in or wanted to learn. Also, that will also give me a wider view of things, or new technologies. Love to explore more.
 
 #### How you will stay consistent every single day?
-Learning in public keeps me consistent and motivated daily. 
+Learning in public keeps me consistent and motivated daily.
