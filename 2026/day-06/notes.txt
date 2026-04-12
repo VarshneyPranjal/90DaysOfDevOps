@@ -1,0 +1,7 @@
+Today is Day 6/90 of my DevOps journey
+Linux file handling practice
+Redirection is powerful
+cat reads full file
+head reads top lines
+tail reads bottom lines
+These skills help in DevOps
